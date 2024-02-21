@@ -49,8 +49,5 @@ public class VariableExample {
         int result;
 //        System.out.println("result = " + result); //(x) 초기화 하지 않으면 사용 불가
 
-
-
     }
-
 }

@@ -14,8 +14,5 @@ public class FloatExample {
 
         System.out.println("f2 = " + f2);
         System.out.println("d2 = " + d2);
-
-
-
     }
 }
