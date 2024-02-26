@@ -10,8 +10,19 @@ public class MainClass {
         System.out.println("------------------------------");
 
         Player p2 = new Player("플레이어2");
-        System.out.println("main에서 p2 주소값: "+ p2);
         p2.characterInfo();
+
+        Player p3 = new Player("플레이어3",100);
+        p3.characterInfo();
+
+        System.out.println("----------------------------------");
+
+        p1.attack(p2);
+
+        System.out.println("----------------------------------");
+
+        Warrior w1 = new Warrior("광전사");
+        w1.characterInfo();
 
     }
 }
