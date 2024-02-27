@@ -21,28 +21,76 @@ null이 들어오면 그만두기
 public class ScoreMain {
     public static void main(String[] args) {
 
+        Score[] scoreList = new Score[100];
         Scanner sc = new Scanner(System.in);
-        Score [] scArr = new Score[100];
-        for (int i = 0; i < scArr.length; i++) {
-            System.out.println("이름: ");
+
+        System.out.println("*** 학생 점수 입력 프로그램 ***");
+        System.out.println("# 이름 입력창에 '그만'을 입력하시면 종료됩니다.");
+        int idx = 0;
+        while (idx != scoreList.length){
+
+            System.out.print("# 이름: ");
             String name = sc.next();
-            if(name.equals("그만")){
-                System.out.println("종료합니다.");
+            if (name.equals("그만")){
+                System.out.println("입력을 종료합니다.");
                 break;
             }
-            System.out.println("국어점수: ");
+            Score s = new Score();
+
+            System.out.println("# 국어: ");
             int korean = sc.nextInt();
-            System.out.println("영어점수: ");
-            int english = sc.nextInt();
-            System.out.println("수학점수: ");
-            int math = sc.nextInt();
-            scArr[i] = new Score(name,korean,english,math);
-        }
-        for (Score score : scArr) {
-            if(score == null){
-                break;
+            if(!s.isValidateScore(korean)){
+                continue;
             }
-            score.scoreInfo();
+            System.out.println("# 영어: ");
+            int english = sc.nextInt();
+            if(!s.isValidateScore(english)){
+                continue;
+            }
+            System.out.println("# 수학: ");
+            int math = sc.nextInt();
+            if(!s.isValidateScore(math)){
+                continue;
+            }
+            s.setName(name);
+            s.setKorean(korean);
+            s.setEnglish(english);
+            s.setMath(math);
+            s.setTotalAndAvg();
+
+            scoreList[idx]=s;
+            idx++;
+            System.out.println("*** 학생 정보 입력 완료! ***");
         }
+        for (Score score : scoreList) {
+            if(score == null) break;
+            score.scoreInfo();
+            System.out.println("-------------------------");
+        }
+        sc.close();
+
+//        Scanner sc = new Scanner(System.in);
+//        Score [] scArr = new Score[100];
+//        for (int i = 0; i < scArr.length; i++) {
+//            System.out.println("이름: ");
+//            String name = sc.next();
+//            if(name.equals("그만")){
+//                System.out.println("종료합니다.");
+//                break;
+//            }
+//            System.out.println("국어점수: ");
+//            int korean = sc.nextInt();
+//            System.out.println("영어점수: ");
+//            int english = sc.nextInt();
+//            System.out.println("수학점수: ");
+//            int math = sc.nextInt();
+//            scArr[i] = new Score(name,korean,english,math);
+//        }
+//        for (Score score : scArr) {
+//            if(score == null){
+//                break;
+//            }
+//            score.scoreInfo();
+//        }
     }
 }
