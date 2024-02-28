@@ -1,6 +1,9 @@
 package oop.obj_arr;
 
 import java.util.Scanner;
+
+import static oop.obj_arr.Score.isValidateScore;
+
 /*
 - Score 객체를 담을 수 있는 배열을 선언하세요.
 배열의 크기는 넉넉하게 100개로 하겠습니다.
@@ -35,28 +38,26 @@ public class ScoreMain {
                 System.out.println("입력을 종료합니다.");
                 break;
             }
-            Score s = new Score();
+
 
             System.out.println("# 국어: ");
             int korean = sc.nextInt();
-            if(!s.isValidateScore(korean)){
+            if(!isValidateScore(korean)){
                 continue;
             }
             System.out.println("# 영어: ");
             int english = sc.nextInt();
-            if(!s.isValidateScore(english)){
+            if(!isValidateScore(english)){
                 continue;
             }
             System.out.println("# 수학: ");
             int math = sc.nextInt();
-            if(!s.isValidateScore(math)){
+            if(!isValidateScore(math)){
                 continue;
             }
-            s.setName(name);
-            s.setKorean(korean);
-            s.setEnglish(english);
-            s.setMath(math);
-            s.setTotalAndAvg();
+
+            Score s = new Score(name,korean,english,math);
+
 
             scoreList[idx]=s;
             idx++;
