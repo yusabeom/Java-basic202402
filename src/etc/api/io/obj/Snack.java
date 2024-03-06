@@ -8,12 +8,16 @@ import java.io.Serializable;
 
 public class Snack implements Serializable {
 
+    public enum Taste{
+        GOOD,BAD,SOSO
+    }
+
     private String snackName;
     private int year; // 출시연도
     private int price; // 가격
-    private String taste; // 맛
+    private Taste taste; // 맛
 
-    public Snack(String snackName, int year, int price, String taste) {
+    public Snack(String snackName, int year, int price, Taste taste) {
         this.snackName = snackName;
         this.year = year;
         this.price = price;
@@ -44,11 +48,11 @@ public class Snack implements Serializable {
         this.price = price;
     }
 
-    public String getTaste() {
+    public Taste getTaste() {
         return taste;
     }
 
-    public void setTaste(String taste) {
+    public void setTaste(Taste taste) {
         this.taste = taste;
     }
 
