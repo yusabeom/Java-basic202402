@@ -19,7 +19,9 @@ public class AppUi {
             num = sc.nextInt();
         } catch (InputMismatchException e){
             System.out.println("# 올바른 정수 입력값이 아닙니다!");
-            sc.nextLine();
+
+        }finally {
+            sc.nextLine(); // 양쪽(try,catch)다 값을 가져가줘야함
         }
         return num;
     }
@@ -38,6 +40,15 @@ public class AppUi {
         makeLine();
     }
 
+    // 회원관리 시스템 화면 출력
+    public static void userManagementScreen() {
+        System.out.println("\n========= 회원 관리 시스템 =========");
+        System.out.println("### 1. 신규 회원 추가");
+        System.out.println("### 2. 회원 검색");
+        System.out.println("### 3. 회원 탈퇴");
+        System.out.println("### 4. 첫 화면으로 가기");
+        makeLine();
+    }
 
 
 
