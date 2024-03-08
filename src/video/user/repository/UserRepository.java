@@ -1,13 +1,19 @@
 package video.user.repository;
 
+import video.movie.domain.Movie;
+import video.order.domain.Order;
+import video.user.domain.Grade;
 import video.user.domain.User;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class UserRepository {
+
+
 
     private static final Map<Integer, User> userDatabase = new HashMap<>();
 
