@@ -91,6 +91,8 @@ public class LottoSimulator {
                 System.out.println("5등 = " + prize5);
                 System.out.println("꽝 = " + failCnt);
                 System.out.println("산 횟수: "+paper +"\n 누적금액: "+cost);
+                System.out.println(win);
+
                 break;
             }
 
