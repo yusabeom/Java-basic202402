@@ -67,11 +67,20 @@ public class Main {
 
         // 연습 6: Cambridge에 사는 거래자의 모든 거래액의 총합 출력.
         System.out.println("6==================================");
-        transactions.stream()
-                .filter(trader -> trader.getTrader().getCity().equals("Cambridge"))
-                .map(Transaction::getValue);
-
-
+        int totalvalue = transactions.stream()
+                .filter(trs -> trs.getTrader().getCity().equalsIgnoreCase("cambridge"))
+                .mapToInt(Transaction::getValue)
+                .sum();
+        System.out.println(totalvalue);
+//        List<Integer> list = transactions.stream()
+//                .filter(trs -> trs.getTrader().getCity().equalsIgnoreCase("cambridge"))
+//                .map(Transaction::getValue)
+//                .collect(Collectors.toList());
+//        int total = 0;
+//        for (Integer int : list) {
+//            total += integer;
+//        }
+//        System.out.println("total = " + total);
 
         // 연습 7: 모든 거래에서 최고 거래액은 얼마인가?
         System.out.println("7==================================");
